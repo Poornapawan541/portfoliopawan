@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pawan | Software Engineer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* Fixed background */
+    body {
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Overlay for readability */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .profile-pic {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #00bfff;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .intro {
+      flex: 1;
+      margin-left: 50px;
+    }
+
+    .intro h1 {
+      font-size: 3rem;
+      color: #00bfff;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: #00bfff;
+      color: #0e0e0e;
+      padding: 12px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+
+    .btn:hover {
+      background-color: #008cba;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .section {
+      display: none; /* Hide by default */
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease-in-out;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .section.active {
+      display: block; /* Show when active */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00bfff;
+      border-bottom: 2px solid #00bfff;
+      display: inline-block;
+    }
+
+    .skills-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* FOUR columns */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.skills-list div {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.skills-list div:hover {
+  transform: translateY(-5px);
+  background-color: rgba(0, 191, 255, 0.2);
+}
+
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #aaa;
+      margin-top: 40px;
+    }
+
+    .hire-me-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #00bfff;
+      color: #0e0e0e;
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .hire-me-btn:hover {
+      background-color: #008cba;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      .profile-pic {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+
+    <!-- Header Section -->
+    <header>
+      <img src="profile.jpg" alt="Pawan" class="profile-pic" />
+
+      <div class="intro">
+        <h1>Pawan</h1>
+        <p>Highly Skilled Software Engineer | Full Stack Developer</p>
+
+        <div class="nav-buttons">
+          <button class="btn" onclick="showSection('about')">About Me</button>
+          <button class="btn" onclick="showSection('skills')">Skills</button>
+          <button class="btn" onclick="showSection('projects')">Projects</button>
+          <button class="btn" onclick="showSection('contact')">Contact Info</button>
+        </div>
+
+        <a href="mailto:pavankumar.dasari@sasi.ac.in" class="hire-me-btn">Hire Me</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+      <!-- About Section -->
+      <div id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+          I am a passionate and highly skilled software engineer with expertise in Java, Python, JavaScript, and full-stack development. I love building scalable web applications, solving complex problems, and continuously improving my skills through learning and challenges.
+        </p>
+      </div>
+
+      <!-- Skills Section -->
+      <div id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-list">
+          <div>Java</div>
+          <div>Python</div>
+          <div>JavaScript</div>
+          <div>React</div>
+          <div>Node.js</div>
+          <div>SQL</div>
+          <div>Git & GitHub</div>
+          <div>Problem Solving</div>
+          <div>Data Structures</div>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project">
+          <h3>Smart Attendance System</h3>
+          <p>An AI-powered attendance system using facial recognition. Built with Python, OpenCV, and Django.</p>
+        </div>
+        <div class="project">
+          <h3>E-commerce Website</h3>
+          <p>Developed a responsive full-stack e-commerce platform using React, Node.js, and MongoDB. Includes secure payment and authentication.</p>
+        </div>
+        <div class="project">
+          <h3>Real-Time Chat App</h3>
+          <p>Built with Node.js and Socket.io, this chat app allows real-time communication with private messaging and file sharing.</p>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div id="contact" class="section">
+        <h2>Contact Info</h2>
+        <p>Email: <a href="mailto:pavankumar.dasari@sasi.ac.in" style="color:#00bfff;">pavankumar.dasari@sasi.ac.in</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/pavankumar-dasari-0b0b902a0/" target="_blank" style="color:#00bfff;">pavankumar dasari </a></p>
+        <p>GitHub: <a href="https://github.com/Poornapawan541" target="_blank" style="color:#00bfff;">Poornapawan541</a></p>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 Pawan | All Rights Reserved
+    </footer>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections first
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+
+      // Show the clicked section
+      const activeSection = document.getElementById(sectionId);
+      if (activeSection) {
+        activeSection.classList.add('active');
+        activeSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Optional: Show the "About Me" section by default when page loads
+    window.onload = () => {
+      showSection('about');
+    };
+  </script>
+
+</body>
+</html>
